@@ -1,10 +1,39 @@
-<h1>Edit me here</h1>
+<style>
+
+h1 {
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    color: burlywood;
+    background-color: black;
+}
+
+div {
+    margin: 200px auto;
+    background-image: url(https://i.pinimg.com/originals/6a/c1/f8/6ac1f8b613d4e598c189eee15fed01f1.jpg);
+    width: 500px;
+} 
+
+#edititem {
+    width: 500px;
+    margin: 30px auto;
+    border: 2px solid black;
+    text-align: center;
+}
+
+</style>
 
 
 
-<form action="/todo/update/<%= ytodo.id %>" method="POST">
+<div>
+    <h1>Edit me here</h1>
+
+
+    <form  class="ui form" action="/todo/update/<%= ytodo.id %>" method="POST">
   
-    <input name="item" type="text" value="<%=ytodo.item %>">
-    <input type="submit" value="Edit">
+         <input id="edititem" name="item" type="text" value="<%=ytodo.item %>">
+        <!---- <input type="submit" value="Edit"> --->
     
-</form>
+    </form>
+
+</div>
