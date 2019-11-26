@@ -1,24 +1,82 @@
-<!--
-This is your default homepage.
-For more information, see:
-• https://sailsjs.com/documentation/concepts/views
-• https://sailsjs.com/documentation/concepts/routes
--->
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 
-<hi>...To Do List...</hi>
 
-<form action="/todo/create" method="POST">
 
-<input name="item" type="text" placeholder="add item here">
-<input type="submit" value="add">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" >
 
-</form>
+<style>
 
-<a href="/todo/add" >Add item</a>
+  #container {
+     width: 500px;
+     margin: 200px auto;
+     background-image: url(https://i.pinimg.com/originals/6a/c1/f8/6ac1f8b613d4e598c189eee15fed01f1.jpg);
+    
+    }
 
-<form action="/todo/list" method="GET">
+  h2{
+
+      color: burlywood;
+      background-color: black;
+      width:500px;
+      height: 50px;
+      padding: 10px 20px;
+      text-align: center;
+
+    }
+
+  .content {
+
+      width: 300px;  
+      height: 42px;
+      text-align: center;
+    }  
+ 
+  #view{
+    width: 500px;
+    height: 40px;
+    font-weight: bold;
+    color: black;
+    align-items: center;
+   
+    
+  }
+
+
+  #addbtn{
+    width: 500px;
+    height: 40px;
+  }
+
+
+
+
+</style>
+
+
+
+
+<div  id ="container">
+            <h2>...To Do List...</h2>
+       
+            
+        <div class="">
+            
+            <form class="ui large form" action="/todo/create" method="POST">
+                <input class ="content" name="item" type="text" placeholder="add item here">  <input id = "addbtn" class="ui yellow button" type="submit" value="Add">
+           
+            </form> 
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+    <div >
+        <form action="/todo/list" method="GET">
   
-  <button type="submit">view list</button>
+             <button class="ui olive button" id="view" type="submit">View List</button>
   
-  </form>
+        </form>
+    </div>
+
+</div>
