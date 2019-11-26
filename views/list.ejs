@@ -1,29 +1,86 @@
-<h1>hello there </h1>
 
-<table class="table table-striped">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" >
+
+<style>
+
+div {
+    margin: 30px auto;
+    background-image: url(https://i.pinimg.com/originals/6a/c1/f8/6ac1f8b613d4e598c189eee15fed01f1.jpg);
+    width: 600px;
+}    
+
+#table {
+    width: 500px;
+    margin: 30px auto;
+}
+
+#additem {
+    width: 500px;
+    margin: 30px auto;
+    border: 2px solid black;
+}
+
+h1 {
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    color: burlywood;
+    background-color: black;
+}
+
+th {
+    color:darkred;
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+}
+
+#td {
+    text-align: center; 
+    font-size: 20px; 
+    color: black;
+}
+
+</style>
+
+
+
+<div>
+    <h1>Add Your List </h1>
+       
+    <form id="additem" class="ui form" action="/todo/create" method="POST">
+        <input class ="content" name="item" type="text" placeholder="add item here">  <!--- <input id = "addbtn" class="ui yellow button" type="submit" value="add"> --->
+   
+    </form> 
+
+
+  <table id="table" class="ui inverted olive table">
     <thead>
         <tr>
-           <th>#</th>
-           <th>item</th>
+ <!------- <th>#</th>  ----->
+           <th></th>
            <th></th> 
         </tr>
     </thead>
     <tbody>
          <% ytodo.forEach(function(list){ %>
         <tr>
-            <td><%= list.id %></td>
-            <td><%= list.item %></td>
+ <!-------  <td><%= list.id %></td>  --->
+            <td id="td"> <%= list.item %> </td>
             <td>
                     <form action="/todo/edit/<%= list.id %>" method="GET">
                         <input type="submit" value="Edit">
                     </form>
                
-                <form action="/todo/delete/<%= list.id %>" method="POST">
-                    <input type="submit" value="Delete">
-                </form>
+                   <form action="/todo/delete/<%= list.id %>" method="POST">
+                        <input type="submit" value="Delete">
+                   </form>
             </td>
         </tr>   
     
         <% }) %> 
     </tbody>
-</table>
+  </table>
+</div>
