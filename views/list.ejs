@@ -1,0 +1,29 @@
+<h1>hello there </h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+           <th>#</th>
+           <th>item</th>
+           <th></th> 
+        </tr>
+    </thead>
+    <tbody>
+         <% ytodo.forEach(function(list){ %>
+        <tr>
+            <td><%= list.id %></td>
+            <td><%= list.item %></td>
+            <td>
+                    <form action="/todo/edit/<%= list.id %>" method="GET">
+                        <input type="submit" value="Edit">
+                    </form>
+               
+                <form action="/todo/delete/<%= list.id %>" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>   
+    
+        <% }) %> 
+    </tbody>
+</table>
